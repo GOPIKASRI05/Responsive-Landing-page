@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Navigation Menu</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom, #515b82, #515b82);
+        }
+        .navbar {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: transparent;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            z-index: 1000;
+        }
+        .navbar.scrolled {
+            background-color: #616575;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: white;
+        }
+        .menu {
+            display: flex;
+            gap: 20px;
+        }
+        .menu a {
+            color: #04081a;
+            text-decoration: none;
+            padding: 12px 20px;
+            font-size: 18px;
+            transition: color 0.3s, transform 0.2s;
+        }
+        .menu a:hover {
+            color: #370f6b;
+            transform: scale(1.1);
+        }
+        .content {
+            height: 200vh;
+            padding-top: 100px;
+            text-align: center;
+            font-size: 24px;
+        }
+        .section {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        .section h2 {
+            color: #26084d;
+        }
+        .section p {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="logo">SOFTTECH</div>
+        <div class="menu">
+            <a href="#">HOME</a>
+            <a href="#">SERVICES</a>
+            <a href="#">PORTFOLIO</a>
+            <a href="#">CONTACT US ......</a>
+        </div>
+    </nav>
+    
+    <div class="content">
+        <div class="section">
+            <h2>Welcome to SOFTTECH</h2>
+            <p>We provide top-notch IT solutions and services, helping businesses grow with cutting-edge technology.</p>
+        </div>
+        <div class="section">
+            <h2>Our Services</h2>
+            <p>We specialize in Web Development, Mobile Applications, AI Solutions, and Cloud Computing.</p>
+        </div>
+        <div class="section">
+            <h2>Our Portfolio</h2>
+            <p>Check out our latest projects showcasing our expertise in various domains.</p>
+        </div>
+        <div class="section">
+            <h2>Contact Us</h2>
+            <p>Get in touch with us for collaborations, projects, or any inquiries.</p>
+        </div>
+    </div>
+    
+    <script>
+        window.addEventListener("scroll", function() {
+            let navbar = document.getElementById("navbar");
+            if (window.scrollY > 50) {
+                navbar.classList.add("scrolled");
+            } else {
+                navbar.classList.remove("scrolled");
+            }
+        });
+    </script>
+</body>
+</html>
